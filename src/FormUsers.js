@@ -14,29 +14,9 @@ export function FormUsers() {
   const [users, setUsers] = useState([]);
   const [showForm, setShowForm] = useState(true);
   const [isEditing, setIsEditing] = useState("");
-<<<<<<< Updated upstream
-  
-=======
-
->>>>>>> Stashed changes
 
   useEffect(() => {
     async function getDados(){
-<<<<<<< Updated upstream
-
-    const usersRef = collection(db, "users");
-    onSnapshot(usersRef, (snapshot) => {
-      let lista = [];
-
-      snapshot.forEach((doc) => {
-        lista.push({
-          id: doc.id,
-          nome: doc.data().nome,
-          idade: doc.data().idade,
-          cargo: doc.data().cargo
-         
-         
-=======
       const usersRef = collection(db, "users");
       onSnapshot(usersRef, (snapshot) => {
         let lista = [];
@@ -48,7 +28,6 @@ export function FormUsers() {
             cargo: doc.data().cargo,
             cep: doc.data().cep,
           })
->>>>>>> Stashed changes
         })
         setUsers(lista);
       })
@@ -61,22 +40,14 @@ export function FormUsers() {
       nome: nome,
       idade: idade,
       cargo: cargo,
-<<<<<<< Updated upstream
-      
-=======
       cep: cep,
->>>>>>> Stashed changes
     })
     .then(() => {
       console.log("CADASTRADO COM SUCESSO")
       setNome("")
       setIdade("")
       setCargo("")
-<<<<<<< Updated upstream
-      
-=======
       setCep("")
->>>>>>> Stashed changes
     })
     .catch((err) => {
       console.log(err)
@@ -93,10 +64,6 @@ export function FormUsers() {
     setCargo(data.cargo)
     setCep(data.cep)
     setIsEditing(data.id);
-<<<<<<< Updated upstream
-    
-=======
->>>>>>> Stashed changes
   }
 
   async function handleEditUser(){
@@ -105,21 +72,13 @@ export function FormUsers() {
       nome: nome,
       idade: idade,
       cargo: cargo,
-<<<<<<< Updated upstream
-      
-=======
       cep: cep,
->>>>>>> Stashed changes
     })
     setNome("")
     setCargo("")
     setIdade("")
     setCep("")
     setIsEditing("");
-<<<<<<< Updated upstream
-    
-=======
->>>>>>> Stashed changes
   }
 
   async function handleLogout(){
@@ -238,9 +197,4 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginTop: 20
   }
-<<<<<<< Updated 
-upstream
-})
-=======
 });
->>>>>>> Stashed changes
